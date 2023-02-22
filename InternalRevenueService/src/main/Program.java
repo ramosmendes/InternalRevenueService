@@ -48,10 +48,10 @@ public class Program {
 		double totalTaxes = 0.00;
 		for (Person person : list) {
 			System.out.println(person);
-			totalTaxes += person.getAnnualIncome();
+			totalTaxes += person.taxes();
 		}
 
-		System.out.print("\nTOTAL TAXES: $ " + totalTaxes);
+		System.out.printf("\nTOTAL TAXES: $ %.2f", totalTaxes);
 
 		in.close();
 	}

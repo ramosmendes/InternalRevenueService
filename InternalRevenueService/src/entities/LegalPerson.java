@@ -27,7 +27,7 @@ public class LegalPerson extends Person {
 
 	@Override
 	public String toString() {
-		return getName() + ": $ " + String.format("%.2f", getAnnualIncome());
+		return getName() + ": $ " + String.format("%.2f", taxes());
 	}
 
 }

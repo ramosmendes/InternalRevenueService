@@ -15,21 +15,21 @@ public class NaturalPerson extends Person {
 
 	@Override
 	public Double taxes() {
-		double health;
-		if (healthExpenses != 0.00 || healthExpenses != null)
-			health = 0.00;
+		double discount;
+		if (healthExpenses == 0.00 || healthExpenses == null)
+			discount = 0.00;
 		else
-			health = (healthExpenses * 0.5);
+			discount = (healthExpenses * 0.5);
 
 		if (getAnnualIncome() < 20000.00)
-			return (getAnnualIncome() * 0.15) - health;
+			return (getAnnualIncome() * 0.15) - discount;
 		else
-			return (getAnnualIncome() * 0.25) - health;
+			return (getAnnualIncome() * 0.25) - discount;
 	}
 
 	@Override
 	public String toString() {
-		return getName() + ": $ " + String.format("%.2f", getAnnualIncome());
+		return getName() + ": $ " + String.format("%.2f", taxes());
 	}
 
 }
