@@ -15,16 +15,9 @@ public class NaturalPerson extends Person {
 
 	@Override
 	public Double taxes() {
-		double discount;
-		if (healthExpenses == 0.00 || healthExpenses == null)
-			discount = 0.00;
-		else
-			discount = (healthExpenses * 0.5);
-
-		if (getAnnualIncome() < 20000.00)
-			return (getAnnualIncome() * 0.15) - discount;
-		else
-			return (getAnnualIncome() * 0.25) - discount;
+		double taxes = (getAnnualIncome() < 20000.00) ? getAnnualIncome() * 0.15 : getAnnualIncome() * 0.25;
+		taxes -= getHealthExpenses() * 0.5;
+		return taxes;
 	}
 
 	@Override
