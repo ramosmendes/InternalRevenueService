@@ -27,4 +27,9 @@ public class NaturalPerson extends Person {
 			return (getAnnualIncome() * 0.25) - health;
 	}
 
+	@Override
+	public String toString() {
+		return getName() + ": $ " + String.format("%.2f", getAnnualIncome());
+	}
+
 }
